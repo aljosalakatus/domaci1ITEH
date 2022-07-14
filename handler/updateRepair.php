@@ -10,7 +10,6 @@ if(isset($_POST['descripton']) && isset($_POST['idLaptop'])
 
     $repair = new Repair(null,$_POST['descripton'],$_SESSION['idWorker'],$_POST['dateFrom'],$_POST['dateTo'],$_POST['idLaptop']);
     
-    //$status = Repair::add($repair, $connection);
     $status = $repair->update($_POST['idRepair'],$connection);
 
     if($status){

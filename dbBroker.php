@@ -4,7 +4,7 @@ $connection = new mysqli("localhost", "root", "root", "laptopservices");
  
 // Check connection
 if($connection === false){
-    die("ERROR: Could not connect. " . $mysqli->connect_error);
+    die("ERROR: COULD NOT CONNECT. " . $mysqli->connect_error);
 }
 
 ?>
