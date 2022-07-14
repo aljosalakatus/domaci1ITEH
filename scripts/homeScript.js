@@ -26,8 +26,8 @@ function openEditForm() {
         $('#descripton').val(response[0]['descr']);
         console.log(response[0]['descr']);
 
-        $('#idCar').val(response[0]['idCar'].trim());
-        console.log(response[0]['idCar'].trim());
+        $('#idLaptop').val(response[0]['idLaptop'].trim());
+        console.log(response[0]['idLaptop'].trim());
 
         $('#dateFrom').val(response[0]['dateFrom'].trim());
         console.log(response[0]['dateFrom'].trim());
