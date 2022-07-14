@@ -51,10 +51,8 @@ function onSubmit(){
   console.log("Adding new repair");
   const $form =$('#addForm');
   const $input = $form.find('input, select, button, textarea');
-
   const serijalizacija = $form.serialize();
   console.log(serijalizacija);
-
   $input.prop('disabled', true);
 
   req = $.ajax({
@@ -64,13 +62,11 @@ function onSubmit(){
   });
 
   req.done(function(res, textStatus, jqXHR){
-      if(res=="Success"){
-          
+      if(res=="Success"){    
           location.reload(true);
       }else console.log("Repair is NOT added!!! "+res);
       console.log(res);
   });
-
   req.fail(function(jqXHR, textStatus, errorThrown){
       console.error('Error occured '+textStatus, errorThrown)
   });
@@ -80,10 +76,7 @@ function deleteRow(){
 
   if(confirm("Confirm delete operation")){
     console.log("Deleting selected repair");
-
   const checked = $('input[name=checked-donut]:checked');
-
-
   console.log(checked.val());
 
   req = $.ajax({
@@ -112,12 +105,10 @@ function deleteRow(){
 
 function onEdit(){
 
-  
   event.preventDefault();
   console.log("Editing repair");
   const $form =$('#efrm');
   const $input = $form.find('input, select, button, textarea');
-
   const checked = $('input[name=checked-donut]:checked');
   console.log($('#efrm').length);
   const serijalizacija = $form.serialize();
@@ -125,14 +116,12 @@ function onEdit(){
   
 
   $input.prop('disabled', true);
-
   req = $.ajax({
       url: 'handler/updateRepair.php',
       type:'post',
       //data: {'id':checked.val(), serijalizacija}
       data: serijalizacija
   });
-
   req.done(function(res, textStatus, jqXHR){
       if(res=="Success"){
           
@@ -140,7 +129,6 @@ function onEdit(){
       }else console.log("Repair is NOT updated!!! "+res);
       console.log(res);
   });
-
   req.fail(function(jqXHR, textStatus, errorThrown){
       console.error('Error occured '+textStatus, errorThrown)
   });
@@ -185,11 +173,9 @@ function sortTable(selectedColumn) {
 
 function searchLaptopID() {
   // Declare variables
-  
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("search");
   filter = input.value.toUpperCase();
-  
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
 
